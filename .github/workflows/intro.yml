@@ -39,20 +39,28 @@ jobs:
           ref: demo
       - name: Pull latest
         run: git pull origin demo
+      - name: Update Job Summary
+        run: |
+          echo "## 👋 Who I Am" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Jash** — SWE2, GitHub Actions Compute & Storage" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "📍 Redmond, WA | 🎓 MS CS, ASU | ⚡ F1 fan & Karting enthusiast" >> $GITHUB_STEP_SUMMARY
       - name: Update README
         run: |
           cat >> README.md << 'EOF'
+          <div align="center">
           # Hi, I'm Jash!
           ### Software Engineer 2 — GitHub Actions Compute & Storage
+          [![GitHub Actions](https://img.shields.io/badge/GitHub%20Actions-2088FF?logo=githubactions&logoColor=white&style=for-the-badge)](https://github.com/features/actions)
+          [![Microsoft](https://img.shields.io/badge/Microsoft-0078D4?logo=microsoft&logoColor=white&style=for-the-badge)](https://microsoft.com)
+          [![Formula 1](https://img.shields.io/badge/Formula%201-E8002D?logo=f1&logoColor=white&style=for-the-badge)](https://www.formula1.com)
           > Here to build things that make developers faster.
-          - Redmond, WA
-          - MS Computer Science — Arizona State University
-          - Fun fact: I am a huge Formula 1 fan and love to do Karting!
+          *(and occasionally embarrass myself at karting tracks)*
+          📍 **Redmond, WA** — Bellevue Hub regular
+          🎓 **MS Computer Science** — Arizona State University
+          🏎️ **Fun fact** — Huge F1 fan. Yes I do think I could beat my teammates in a kart. No I have not been proven wrong yet.
           EOF
-      - name: Pause for commentary
-        run: |
-          echo "Let me introduce myself..."
-          sleep 20
       - name: Commit and push
         run: |
           git config user.name "github-actions[bot]"
@@ -61,14 +69,7 @@ jobs:
           git commit -m "intro: add who-i-am"
           git push
       - name: Preview README so far
-        run: cat README.md
-      - name: Update Job Summary
-        run: |
-          echo "## 👋 Who I Am" >> $GITHUB_STEP_SUMMARY
-          echo "" >> $GITHUB_STEP_SUMMARY
-          echo "**Jash** — SWE2, GitHub Actions Compute & Storage" >> $GITHUB_STEP_SUMMARY
-          echo "" >> $GITHUB_STEP_SUMMARY
-          echo "📍 Redmond, WA | 🎓 MS CS, ASU | ⚡ F1 fan & Karting enthusiast" >> $GITHUB_STEP_SUMMARY      
+        run: cat README.md      
 
   my-journey:
     needs: [who-i-am]
@@ -80,19 +81,31 @@ jobs:
           ref: demo
       - name: Pull latest
         run: git pull origin demo
+      - name: Pause for commentary
+        run: |
+          echo "Let me walk you through how I got here..."
+          sleep 10
+      - name: Update Job Summary
+        run: |
+          echo "## 🗺️ My Journey" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "| | Role | Vibe |" >> $GITHUB_STEP_SUMMARY
+          echo "|---|---|---|" >> $GITHUB_STEP_SUMMARY
+          echo "| 🔬 | LEAPS Lab @ ASU | Built backend for power systems optimizations + led AI initiatives  |" >> $GITHUB_STEP_SUMMARY
+          echo "| 📦 | Microsoft DevBox | Joined Dec 2025 — onboarding, getting access, filing more tickets to get more access |" >> $GITHUB_STEP_SUMMARY
+          echo "| ⚡ | GitHub Actions C&S | Came over with the team in the reorg — and honestly could not be happier about it |" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
       - name: Update README
         run: |
           cat >> README.md << 'EOF'
           ---
           ## My Journey
-          - **LEAPS Lab @ ASU** — Built backend for power systems optimizations and led AI initiatives
-          - **Microsoft DevBox** — Joined Dec 2025
-          - **GitHub Actions C&S** — Came over with the team during the reorg
+          | | Role | What I did | Vibe |
+          |---|---|---|---|
+          | 🔬 | **LEAPS Lab @ ASU** | Built backend for power systems optimizations + led AI initiatives |
+          | 📦 | **Microsoft DevBox** | Joined Dec 2025 — onboarding, getting access, filing more tickets to get more access |
+          | ⚡ | **GitHub Actions C&S** | Came over with the team in the reorg — and honestly could not be happier about it |
           EOF
-      - name: Pause for commentary
-        run: |
-          echo "Let me walk you through how I got here..."
-          sleep 20
       - name: Commit and push
         run: |
           git config user.name "github-actions[bot]"
@@ -102,11 +115,6 @@ jobs:
           git push
       - name: Preview README so far
         run: cat README.md
-      - name: Update Job Summary
-        run: |
-          echo "## 🗺️ My Journey" >> $GITHUB_STEP_SUMMARY
-          echo "" >> $GITHUB_STEP_SUMMARY
-          echo "🔬 LEAPS Lab ASU → 📦 Microsoft DevBox → ⚡ GitHub Actions C&S" >> $GITHUB_STEP_SUMMARY
 
   what-ive-shipped:
     needs: [my-journey]
@@ -118,20 +126,34 @@ jobs:
           ref: demo
       - name: Pull latest
         run: git pull origin demo
+      - name: Pause for commentary
+        run: |
+          echo "Here's what I've been up to..."
+          sleep 10
+      - name: Update Job Summary
+        run: |
+          echo "## 🚀 What I've Shipped" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "| Feature | Repos |" >> $GITHUB_STEP_SUMMARY
+          echo "|---|---|" >> $GITHUB_STEP_SUMMARY
+          echo "| 🖼️ Runner pool image editing | github, github-ui, launch, actions-dotnet | if you change your mind later? I got you |" >> $GITHUB_STEP_SUMMARY
+          echo "| 📸 Snapshot versioning | actions-proto, actions-broker-worker, actions-run-service, actions-dotnet | Atleast support will now know you tried to sneak in the "snapshot" keyword |" >> $GITHUB_STEP_SUMMARY
+          echo "| 🧹 Feature flag cleanup | github | I said "Clean-up", and my my mom was already proud |" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**22 PRs across 9 repos** *(anyone else weirdly obsessed with green boxes?)*" >> $GITHUB_STEP_SUMMARY
       - name: Update README
         run: |
           cat >> README.md << 'EOF'
           ---
-          ## What I've Shipped (under 2 months in)
-          - Runner pool image editing
-          - Snapshot versioning
-          - Feature flag cleanup
-          - 22 PRs merged across 9 repos
+          ## 🚀 What I've Shipped
+          | Feature | Repos |
+          |---|---|
+          | 🖼️ Runner pool image editing | github, github-ui, launch, actions-dotnet | if you change your mind later? I got you |
+          | 📸 Snapshot versioning | actions-proto, actions-broker-worker, actions-run-service, actions-dotnet | Atleast support will now know you tried to sneak in the "snapshot" keyword |
+          | 🧹 Feature flag cleanup | github | I said "Clean-up", and my my mom was already proud |
+          ---
+          **22 PRs across 9 repos** *(anyone else weirdly obsessed with green boxes?)*
           EOF
-      - name: Pause for commentary
-        run: |
-          echo "Here's what I've been up to..."
-          sleep 20
       - name: Commit and push
         run: |
           git config user.name "github-actions[bot]"
@@ -141,14 +163,6 @@ jobs:
           git push
       - name: Preview README so far
         run: cat README.md
-      - name: Update Job Summary
-        run: |
-          echo "## 🚀 What I've Shipped" >> $GITHUB_STEP_SUMMARY
-          echo "" >> $GITHUB_STEP_SUMMARY
-          echo "- Runner pool image editing" >> $GITHUB_STEP_SUMMARY
-          echo "- Snapshot versioning" >> $GITHUB_STEP_SUMMARY
-          echo "- Feature flag cleanup" >> $GITHUB_STEP_SUMMARY
-          echo "- **22 PRs across 9 repos in under 2 months**" >> $GITHUB_STEP_SUMMARY
 
   what-excites-me:
     needs: [what-ive-shipped]
@@ -160,22 +174,45 @@ jobs:
           ref: demo
       - name: Pull latest
         run: git pull origin demo
+      - name: Pause for commentary
+        run: |
+          echo "And here's what gets me excited..."
+          sleep 25
+      - name: Update Job Summary
+        run: |
+          echo "## ⚡ What Excites Me" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "- 🏗️ **Infrastructure at scale** — who does not have the urge to refactor the whole infrastructure?" >> $GITHUB_STEP_SUMMARY
+          echo "- 🧑‍💻 **Developer Experience** — if a dev is frustrated, that is a bug. Full stop." >> $GITHUB_STEP_SUMMARY
+          echo "- 🔭 **Learning the full compute pipeline** — still connecting dots, loving every minute, will annoy everyone with silly questions" >> $GITHUB_STEP_SUMMARY
+          echo "- 🤝 **This team** — excited to build with everyone — came over in the reorg and immediately felt at home (also did I mention slack reactions are just adorable?)" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "---" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "*Built with GitHub Actions, naturally.* 😄" >> $GITHUB_STEP_SUMMARY
+          echo "*Because what better way to introduce yourself to the Actions team?*" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "[![GitHub](https://img.shields.io/badge/github-jashkahar-181717?logo=github&style=flat-square)](https://github.com/jashkahar)" >> $GITHUB_STEP_SUMMARY
       - name: Update README
         run: |
           cat >> README.md << 'EOF'
           ---
           ## What Excites Me
-          - Infrastructure at scale
-          - Developer Experience
-          - Learning the full compute pipeline
-          - This team — excited to build with everyone
+          - 🏗️ Infrastructure at scale - who does not have the urge to refactor the whole infrastructure?
+          - 🧑‍💻 Developer Experience - if a dev is frustrated, that is a bug. Full stop.
+          - 🔭 Learning the full compute pipeline - still connecting dots, loving every minute, will annoy everyone with silly questions
+          - 🤝 This team — excited to build with everyone - came over in the reorg and immediately felt at home (also did I mention slack reactions are just adorable?)
           ---
+          <div align="center">
+
           *This README was built live by a GitHub Actions workflow.*
+          *Because what better way to introduce yourself to the Actions team?* 😄
+
+          [![Built with Actions](https://img.shields.io/badge/Built%20with-GitHub%20Actions-2088FF?logo=githubactions&logoColor=white&style=for-the-badge)](https://github.com/jashkahar/hello-actions-team/actions/workflows/intro.yml)
+          [![Say Hi](https://img.shields.io/badge/Say%20Hi-jashkahar-181717?logo=github&logoColor=white&style=for-the-badge)](https://github.com/jashkahar)
+
+          </div>
           EOF
-      - name: Pause for commentary
-        run: |
-          echo "And here's what gets me excited..."
-          sleep 25
       - name: Commit and push
         run: |
           git config user.name "github-actions[bot]"
@@ -185,14 +222,3 @@ jobs:
           git push
       - name: Preview README so far
         run: cat README.md
-      - name: Update Job Summary
-        run: |
-          echo "## ⚡ What Excites Me" >> $GITHUB_STEP_SUMMARY
-          echo "" >> $GITHUB_STEP_SUMMARY
-          echo "- Infrastructure at scale" >> $GITHUB_STEP_SUMMARY
-          echo "- Developer Experience" >> $GITHUB_STEP_SUMMARY
-          echo "- Learning the full compute pipeline" >> $GITHUB_STEP_SUMMARY
-          echo "- This team — excited to build with everyone" >> $GITHUB_STEP_SUMMARY
-          echo "" >> $GITHUB_STEP_SUMMARY
-          echo "---" >> $GITHUB_STEP_SUMMARY
-          echo "*Built with GitHub Actions, naturally.*" >> $GITHUB_STEP_SUMMARY
