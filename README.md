@@ -1,1 +1,16 @@
 
+# Hi, I'm Jash!
+### Software Engineer 2 — GitHub Actions Compute & Storage
+
+[![GitHub Actions](https://img.shields.io/badge/GitHub%20Actions-2088FF?logo=githubactions&logoColor=white&style=for-the-badge)](https://github.com/features/actions)
+[![Microsoft](https://img.shields.io/badge/Microsoft-0078D4?logo=microsoft&logoColor=white&style=for-the-badge)](https://microsoft.com)
+
+> Here to build things that make developers faster.
+*(and occasionally embarrass myself at karting tracks)*
+
+📍 **Redmond, WA** — Bellevue Hub regular
+
+🎓 **MS Computer Science** — Arizona State University
+
+🏎️ **Fun fact** — Huge F1 fan. Yes I do think I could beat my teammates in a kart. No I have not been proven wrong yet.
+
