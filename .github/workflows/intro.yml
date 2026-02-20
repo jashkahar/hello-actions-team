@@ -49,7 +49,6 @@ jobs:
       - name: Update README
         run: |
           cat >> README.md << 'EOF'
-          <div align="center">
           # Hi, I'm Jash!
           ### Software Engineer 2 — GitHub Actions Compute & Storage
           [![GitHub Actions](https://img.shields.io/badge/GitHub%20Actions-2088FF?logo=githubactions&logoColor=white&style=for-the-badge)](https://github.com/features/actions)
@@ -203,6 +202,7 @@ jobs:
           - 🔭 Learning the full compute pipeline - still connecting dots, loving every minute, will annoy everyone with silly questions
           - 🤝 This team — excited to build with everyone - came over in the reorg and immediately felt at home (also did I mention slack reactions are just adorable?)
           ---
+
           <div align="center">
 
           *This README was built live by a GitHub Actions workflow.*
@@ -212,6 +212,7 @@ jobs:
           [![Say Hi](https://img.shields.io/badge/Say%20Hi-jashkahar-181717?logo=github&logoColor=white&style=for-the-badge)](https://github.com/jashkahar)
 
           </div>
+
           EOF
       - name: Commit and push
         run: |
