@@ -30,3 +30,21 @@
 | 🧹 Feature flag cleanup | github | I said "Clean-up", and my my mom was already proud |
 
 **22 PRs across 9 repos** *(anyone else weirdly obsessed with green tiles?)*
+---
+## What Excites Me
+- 🏗️ Infrastructure at scale - who does not have the urge to refactor the whole infrastructure?
+- 🧑‍💻 Developer Experience - if a dev is frustrated, that is a bug. Full stop.
+- 🔭 Learning the full compute pipeline - still connecting dots, loving every minute, will annoy everyone with silly questions
+- 🤝 This team — excited to build with everyone - came over in the reorg and immediately felt at home (also did I mention slack reactions are just adorable?)
+---
+
+<div align="center">
+
+*This README was built live by a GitHub Actions workflow.*
+*Because what better way to introduce yourself to the Actions team?* 😄
+
+[![Built with Actions](https://img.shields.io/badge/Built%20with-GitHub%20Actions-2088FF?logo=githubactions&logoColor=white&style=for-the-badge)](https://github.com/jashkahar/hello-actions-team/actions/workflows/intro.yml)
+[![Say Hi](https://img.shields.io/badge/Say%20Hi-jashkahar-181717?logo=github&logoColor=white&style=for-the-badge)](https://github.com/jashkahar)
+
+</div>
+
