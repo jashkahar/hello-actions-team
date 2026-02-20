@@ -46,6 +46,10 @@ jobs:
           - MS Computer Science — Arizona State University
           - Fun fact: I am a huge Formula 1 fan and love to do Karting!
           EOF
+      - name: Pause for commentary
+        run: |
+          echo "Let me introduce myself..."
+          sleep 20
       - name: Commit and push
         run: |
           git config user.name "github-actions[bot]"
@@ -53,6 +57,8 @@ jobs:
           git add README.md
           git commit -m "intro: add who-i-am"
           git push
+      - name: Preview README so far
+        run: cat README.md
 
   my-journey:
     needs: [who-i-am]
@@ -73,6 +79,10 @@ jobs:
           - **Microsoft DevBox** — Joined Dec 2025
           - **GitHub Actions C&S** — Came over with the team during the reorg
           EOF
+      - name: Pause for commentary
+        run: |
+          echo "Let me walk you through how I got here..."
+          sleep 20
       - name: Commit and push
         run: |
           git config user.name "github-actions[bot]"
@@ -80,6 +90,8 @@ jobs:
           git add README.md
           git commit -m "intro: add my-journey"
           git push
+      - name: Preview README so far
+        run: cat README.md
 
   what-ive-shipped:
     needs: [my-journey]
@@ -101,6 +113,10 @@ jobs:
           - Feature flag cleanup
           - 22 PRs merged across 9 repos
           EOF
+      - name: Pause for commentary
+        run: |
+          echo "Here's what I've been up to..."
+          sleep 20
       - name: Commit and push
         run: |
           git config user.name "github-actions[bot]"
@@ -108,6 +124,8 @@ jobs:
           git add README.md
           git commit -m "intro: add what-ive-shipped"
           git push
+      - name: Preview README so far
+        run: cat README.md
 
   what-excites-me:
     needs: [what-ive-shipped]
@@ -131,6 +149,10 @@ jobs:
           ---
           *This README was built live by a GitHub Actions workflow.*
           EOF
+      - name: Pause for commentary
+        run: |
+          echo "And here's what gets me excited..."
+          sleep 25
       - name: Commit and push
         run: |
           git config user.name "github-actions[bot]"
@@ -138,6 +160,8 @@ jobs:
           git add README.md
           git commit -m "intro: add what-excites-me"
           git push
+      - name: Preview README so far
+        run: cat README.md
       - name: Write Job Summary
         run: |
           echo "# Hello, Actions Team — I'm Jash!" >> $GITHUB_STEP_SUMMARY
