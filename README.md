@@ -21,3 +21,12 @@
 | 🔬 | **LEAPS Lab @ ASU** | Built backend for power systems optimizations + led AI initiatives |
 | 📦 | **Microsoft DevBox** | Joined Dec 2025 — onboarding, getting access, filing more tickets to get more access |
 | ⚡ | **GitHub Actions C&S** | Came over with the team in the reorg — and honestly could not be happier about it |
+---
+## 🚀 What I've Shipped
+| Feature | Repos |  |
+|---|---|---|
+| 🖼️ Runner pool image editing | github, github-ui, launch, actions-dotnet | if you change your mind later? I got you |
+| 📸 Snapshot versioning | actions-proto, actions-broker-worker, actions-run-service, actions-dotnet | Atleast support will now know you tried to sneak in the "snapshot" keyword |
+| 🧹 Feature flag cleanup | github | I said "Clean-up", and my my mom was already proud |
+
+**22 PRs across 9 repos** *(anyone else weirdly obsessed with green tiles?)*
