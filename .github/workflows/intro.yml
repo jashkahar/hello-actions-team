@@ -39,13 +39,13 @@ jobs:
       - name: Update README
         run: |
           cat >> README.md << 'EOF'
-# Hi, I'm Jash!
-### Software Engineer 2 — GitHub Actions Compute & Storage
-> Here to build things that make developers faster.
-- Redmond, WA
-- MS Computer Science — Arizona State University
-- Fun fact: I am a huge Formula 1 fan and love to do Karting!
-EOF
+          # Hi, I'm Jash!
+          ### Software Engineer 2 — GitHub Actions Compute & Storage
+          > Here to build things that make developers faster.
+          - Redmond, WA
+          - MS Computer Science — Arizona State University
+          - Fun fact: I am a huge Formula 1 fan and love to do Karting!
+          EOF
       - name: Commit and push
         run: |
           git config user.name "github-actions[bot]"
@@ -67,12 +67,12 @@ EOF
       - name: Update README
         run: |
           cat >> README.md << 'EOF'
----
-## My Journey
-- **LEAPS Lab @ ASU** — Built backend for power systems optimizations and led AI initiatives
-- **Microsoft DevBox** — Joined Dec 2025
-- **GitHub Actions C&S** — Came over with the team during the reorg
-EOF
+          ---
+          ## My Journey
+          - **LEAPS Lab @ ASU** — Built backend for power systems optimizations and led AI initiatives
+          - **Microsoft DevBox** — Joined Dec 2025
+          - **GitHub Actions C&S** — Came over with the team during the reorg
+          EOF
       - name: Commit and push
         run: |
           git config user.name "github-actions[bot]"
@@ -94,13 +94,13 @@ EOF
       - name: Update README
         run: |
           cat >> README.md << 'EOF'
----
-## What I've Shipped (under 2 months in)
-- Runner pool image editing
-- Snapshot versioning
-- Feature flag cleanup
-- 22 PRs merged across 9 repos
-EOF
+          ---
+          ## What I've Shipped (under 2 months in)
+          - Runner pool image editing
+          - Snapshot versioning
+          - Feature flag cleanup
+          - 22 PRs merged across 9 repos
+          EOF
       - name: Commit and push
         run: |
           git config user.name "github-actions[bot]"
@@ -122,15 +122,15 @@ EOF
       - name: Update README
         run: |
           cat >> README.md << 'EOF'
----
-## What Excites Me
-- Infrastructure at scale
-- Developer Experience
-- Learning the full compute pipeline
-- This team — excited to build with everyone
----
-*This README was built live by a GitHub Actions workflow.*
-EOF
+          ---
+          ## What Excites Me
+          - Infrastructure at scale
+          - Developer Experience
+          - Learning the full compute pipeline
+          - This team — excited to build with everyone
+          ---
+          *This README was built live by a GitHub Actions workflow.*
+          EOF
       - name: Commit and push
         run: |
           git config user.name "github-actions[bot]"
