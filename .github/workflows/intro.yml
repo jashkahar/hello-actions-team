@@ -1,0 +1,211 @@
+name: Team Intro
+
+on:
+  workflow_dispatch:
+    inputs:
+      reset:
+        description: 'Reset README before running?'
+        type: boolean
+        default: true
+
+permissions:
+  contents: write
+
+jobs:
+  reset:
+    if: ${{ inputs.reset == true }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - name: Recreate demo branch from main
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git checkout -B demo
+          git push origin demo --force
+
+  who-i-am:
+    needs: [reset]
+    if: ${{ always() && !failure() && !cancelled() }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: demo
+      - name: Pull latest
+        run: git pull origin demo
+      - name: Update README
+        run: |
+          cat >> README.md << 'EOF'
+
+# 👋 Hi, I'm Jash!
+
+<img src="assets/profile.jpg" width="120" align="right" />
+
+### Software Engineer 2 — GitHub Actions Compute & Storage
+
+![GitHub Actions](https://img.shields.io/badge/GitHub%20Actions-2088FF?logo=githubactions&logoColor=white)
+![Microsoft](https://img.shields.io/badge/Microsoft-0078D4?logo=microsoft&logoColor=white)
+![Formula 1](https://img.shields.io/badge/Formula%201-E8002D?logo=f1&logoColor=white)
+
+> Here to build things that make developers faster.
+
+📍 Redmond, WA — I come to the Bellevue Hub regularly!
+🎓 MS Computer Science — Arizona State University
+⚡ Fun fact: I am a huge Formula 1 fan and love to do Karting!
+EOF
+      - name: Commit and push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add README.md
+          git commit -m "intro: add who-i-am"
+          git push
+
+  my-journey:
+    needs: [who-i-am]
+    if: ${{ always() && !failure() && !cancelled() }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: demo
+      - name: Pull latest
+        run: git pull origin demo
+      - name: Update README
+        run: |
+          cat >> README.md << 'EOF'
+
+---
+## 🗺️ My Journey
+
+```
+🔬 LEAPS Lab, ASU          →     📦 Microsoft DevBox      →     ⚡ GitHub Actions C&S
+Energy & Power Systems           Dec 2025                        Jan 2026 (reorg)
+Research & AI initiatives         Onboarding & access 😄         Here now!
+```
+
+- **LEAPS Lab @ ASU** — Built backend to support and run power systems optimizations and led AI initiatives
+- **Microsoft DevBox** — Joined Dec 2025, just onboarding and figuring out how many more entitlements and access I need 😂
+- **GitHub Actions C&S** — Came over with the team during the reorg 😊
+EOF
+      - name: Commit and push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add README.md
+          git commit -m "intro: add my-journey"
+          git push
+
+  what-ive-shipped:
+    needs: [my-journey]
+    if: ${{ always() && !failure() && !cancelled() }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: demo
+      - name: Pull latest
+        run: git pull origin demo
+      - name: Update README
+        run: |
+          cat >> README.md << 'EOF'
+
+---
+## 🚀 What I've Shipped (< 2 months in)
+
+| Feature | Description | Repos |
+|---|---|---|
+| 🖼️ Runner pool image editing | Allow base image + image gen toggle on existing pools | `github`, `github-ui`, `launch`, `actions-dotnet` |
+| 📸 Snapshot versioning | Thread SnapshotName/Version through Actions pipeline | `actions-proto`, `actions-broker-worker`, `actions-run-service`, `actions-dotnet` |
+| 🧹 Feature flag cleanup | Cleaned up fully shipped FF across the codebase | `github` |
+
+> 22 PRs merged across 9 repos in under 2 months 🤪
+EOF
+      - name: Commit and push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add README.md
+          git commit -m "intro: add what-ive-shipped"
+          git push
+
+  what-excites-me:
+    needs: [what-ive-shipped]
+    if: ${{ always() && !failure() && !cancelled() }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: demo
+      - name: Pull latest
+        run: git pull origin demo
+      - name: Update README
+        run: |
+          cat >> README.md << 'EOF'
+
+---
+## ⚡ What Excites Me
+
+- 🏗️ **Infrastructure at scale** — GitHub Actions runs millions of workflows, that scale is fascinating to me
+- 🧑‍💻 **Developer Experience** — my passion area, making devs faster and less frustrated
+- 🔭 **Learning the full compute pipeline** — still connecting all the dots and loving it
+- 🤝 **This team** — excited to build with everyone
+
+---
+
+*This README was built live by a GitHub Actions workflow.*
+*Want to try it yourself? Hit the Run Workflow button 👆*
+
+[![Run Intro](https://img.shields.io/badge/Run%20Intro-Workflow%20Dispatch-2ea44f?logo=githubactions)](https://github.com/jashkahar/hello-actions-team/actions/workflows/intro.yml)
+
+🤖 *Built with the help of [GitHub Copilot](https://github.com/features/copilot) + Claude Opus 4.6*
+EOF
+      - name: Commit and push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add README.md
+          git commit -m "intro: add what-excites-me"
+          git push
+      - name: Write Job Summary
+        run: |
+          cat >> $GITHUB_STEP_SUMMARY << 'EOF'
+# 👋 Hello, Actions Team — I'm Jash!
+
+![GitHub Actions](https://img.shields.io/badge/GitHub%20Actions-2088FF?logo=githubactions&logoColor=white)
+![Microsoft](https://img.shields.io/badge/Microsoft-0078D4?logo=microsoft&logoColor=white)
+
+---
+
+## Quick Stats
+| | |
+|---|---|
+| 🎓 | MS CS — Arizona State University |
+| 🔬 | Former researcher, LEAPS Energy Lab @ ASU |
+| 💼 | Joined Microsoft Dec 2025 — DevBox → Actions C&S |
+| 📍 | Redmond, WA |
+| ⚡ | Fun fact: I am a huge Formula 1 fan and love to do Karting! |
+
+---
+
+## Shipped in < 2 Months
+- 🖼️ Runner pool image editing + image generation toggle
+- 📸 Snapshot versioning through the Actions pipeline
+- 🧹 Feature flag cleanup
+- 📝 22 PRs across 9 repos
+
+---
+
+## What I Care About
+> Infrastructure · Developer Experience · Building great tools
+
+---
+
+*Built with GitHub Actions, naturally.*
+[![GitHub](https://img.shields.io/badge/github-jashkahar-181717?logo=github)](https://github.com/jashkahar)
+
+🤖 *Built with the help of [GitHub Copilot](https://github.com/features/copilot) + Claude Opus 4.6*
+EOF
