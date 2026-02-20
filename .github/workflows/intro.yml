@@ -24,6 +24,9 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git checkout -B demo
+          echo "" > README.md
+          git add README.md
+          git commit -m "reset: clean README"
           git push origin demo --force
 
   who-i-am:
@@ -59,6 +62,13 @@ jobs:
           git push
       - name: Preview README so far
         run: cat README.md
+      - name: Update Job Summary
+        run: |
+          echo "## 👋 Who I Am" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Jash** — SWE2, GitHub Actions Compute & Storage" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "📍 Redmond, WA | 🎓 MS CS, ASU | ⚡ F1 fan & Karting enthusiast" >> $GITHUB_STEP_SUMMARY      
 
   my-journey:
     needs: [who-i-am]
@@ -92,6 +102,11 @@ jobs:
           git push
       - name: Preview README so far
         run: cat README.md
+      - name: Update Job Summary
+        run: |
+          echo "## 🗺️ My Journey" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "🔬 LEAPS Lab ASU → 📦 Microsoft DevBox → ⚡ GitHub Actions C&S" >> $GITHUB_STEP_SUMMARY
 
   what-ive-shipped:
     needs: [my-journey]
@@ -126,6 +141,14 @@ jobs:
           git push
       - name: Preview README so far
         run: cat README.md
+      - name: Update Job Summary
+        run: |
+          echo "## 🚀 What I've Shipped" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "- Runner pool image editing" >> $GITHUB_STEP_SUMMARY
+          echo "- Snapshot versioning" >> $GITHUB_STEP_SUMMARY
+          echo "- Feature flag cleanup" >> $GITHUB_STEP_SUMMARY
+          echo "- **22 PRs across 9 repos in under 2 months**" >> $GITHUB_STEP_SUMMARY
 
   what-excites-me:
     needs: [what-ive-shipped]
@@ -162,8 +185,14 @@ jobs:
           git push
       - name: Preview README so far
         run: cat README.md
-      - name: Write Job Summary
+      - name: Update Job Summary
         run: |
-          echo "# Hello, Actions Team — I'm Jash!" >> $GITHUB_STEP_SUMMARY
+          echo "## ⚡ What Excites Me" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
-          echo "Built with GitHub Actions, naturally." >> $GITHUB_STEP_SUMMARY
+          echo "- Infrastructure at scale" >> $GITHUB_STEP_SUMMARY
+          echo "- Developer Experience" >> $GITHUB_STEP_SUMMARY
+          echo "- Learning the full compute pipeline" >> $GITHUB_STEP_SUMMARY
+          echo "- This team — excited to build with everyone" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "---" >> $GITHUB_STEP_SUMMARY
+          echo "*Built with GitHub Actions, naturally.*" >> $GITHUB_STEP_SUMMARY
