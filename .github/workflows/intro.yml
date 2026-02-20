@@ -51,14 +51,19 @@ jobs:
           cat >> README.md << 'EOF'
           # Hi, I'm Jash!
           ### Software Engineer 2 — GitHub Actions Compute & Storage
+          
           [![GitHub Actions](https://img.shields.io/badge/GitHub%20Actions-2088FF?logo=githubactions&logoColor=white&style=for-the-badge)](https://github.com/features/actions)
           [![Microsoft](https://img.shields.io/badge/Microsoft-0078D4?logo=microsoft&logoColor=white&style=for-the-badge)](https://microsoft.com)
-          [![Formula 1](https://img.shields.io/badge/Formula%201-E8002D?logo=f1&logoColor=white&style=for-the-badge)](https://www.formula1.com)
+          
           > Here to build things that make developers faster.
           *(and occasionally embarrass myself at karting tracks)*
+          
           📍 **Redmond, WA** — Bellevue Hub regular
+          
           🎓 **MS Computer Science** — Arizona State University
+          
           🏎️ **Fun fact** — Huge F1 fan. Yes I do think I could beat my teammates in a kart. No I have not been proven wrong yet.
+          
           EOF
       - name: Commit and push
         run: |
@@ -133,25 +138,25 @@ jobs:
         run: |
           echo "## 🚀 What I've Shipped" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
-          echo "| Feature | Repos |" >> $GITHUB_STEP_SUMMARY
-          echo "|---|---|" >> $GITHUB_STEP_SUMMARY
+          echo "| Feature | Repos |  |" >> $GITHUB_STEP_SUMMARY
+          echo "|---|---|---|" >> $GITHUB_STEP_SUMMARY
           echo "| 🖼️ Runner pool image editing | github, github-ui, launch, actions-dotnet | if you change your mind later? I got you |" >> $GITHUB_STEP_SUMMARY
           echo "| 📸 Snapshot versioning | actions-proto, actions-broker-worker, actions-run-service, actions-dotnet | Atleast support will now know you tried to sneak in the "snapshot" keyword |" >> $GITHUB_STEP_SUMMARY
           echo "| 🧹 Feature flag cleanup | github | I said "Clean-up", and my my mom was already proud |" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
-          echo "**22 PRs across 9 repos** *(anyone else weirdly obsessed with green boxes?)*" >> $GITHUB_STEP_SUMMARY
+          echo "**22 PRs across 9 repos** *(anyone else weirdly obsessed with green tiles?)*" >> $GITHUB_STEP_SUMMARY
       - name: Update README
         run: |
           cat >> README.md << 'EOF'
           ---
           ## 🚀 What I've Shipped
-          | Feature | Repos |
-          |---|---|
+          | Feature | Repos |  |
+          |---|---|---|
           | 🖼️ Runner pool image editing | github, github-ui, launch, actions-dotnet | if you change your mind later? I got you |
           | 📸 Snapshot versioning | actions-proto, actions-broker-worker, actions-run-service, actions-dotnet | Atleast support will now know you tried to sneak in the "snapshot" keyword |
           | 🧹 Feature flag cleanup | github | I said "Clean-up", and my my mom was already proud |
-          ---
-          **22 PRs across 9 repos** *(anyone else weirdly obsessed with green boxes?)*
+  
+          **22 PRs across 9 repos** *(anyone else weirdly obsessed with green tiles?)*
           EOF
       - name: Commit and push
         run: |
