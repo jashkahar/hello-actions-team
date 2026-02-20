@@ -42,7 +42,7 @@ jobs:
 
 # 👋 Hi, I'm Jash!
 
-<img src="assets/profile.jpg" width="120" align="right" />
+<img src="https://github.com/jashkahar.png" width="120" align="right" />
 
 ### Software Engineer 2 — GitHub Actions Compute & Storage
 
@@ -81,11 +81,11 @@ EOF
 ---
 ## 🗺️ My Journey
 
-```
+\`\`\`
 🔬 LEAPS Lab, ASU          →     📦 Microsoft DevBox      →     ⚡ GitHub Actions C&S
 Energy & Power Systems           Dec 2025                        Jan 2026 (reorg)
 Research & AI initiatives         Onboarding & access 😄         Here now!
-```
+\`\`\`
 
 - **LEAPS Lab @ ASU** — Built backend to support and run power systems optimizations and led AI initiatives
 - **Microsoft DevBox** — Joined Dec 2025, just onboarding and figuring out how many more entitlements and access I need 😂
