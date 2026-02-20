@@ -14,3 +14,10 @@
 
 🏎️ **Fun fact** — Huge F1 fan. Yes I do think I could beat my teammates in a kart. No I have not been proven wrong yet.
 
+---
+## My Journey
+| | Role | What I did | Vibe |
+|---|---|---|---|
+| 🔬 | **LEAPS Lab @ ASU** | Built backend for power systems optimizations + led AI initiatives |
+| 📦 | **Microsoft DevBox** | Joined Dec 2025 — onboarding, getting access, filing more tickets to get more access |
+| ⚡ | **GitHub Actions C&S** | Came over with the team in the reorg — and honestly could not be happier about it |
